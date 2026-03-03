@@ -1,0 +1,35 @@
+# Device QA Monitor - Configuration
+# cp config.example.yaml config.yaml
+
+# GPX Dashboard Login
+gpx_base_url: "https://admin.gpx.co"
+gpx_username: "your.email@company.com"
+gpx_password: "your_password_here"
+
+# ---------------------------------------------------------------------------
+# Slack - Webhook (for notifications from command-line mode)
+# ---------------------------------------------------------------------------
+slack_webhook_url: "https://hooks.slack.com/services/YOUR/WEBHOOK/URL"
+
+# ---------------------------------------------------------------------------
+# Slack - Bot Tokens (for @mention mode via slack_bot.py)
+# ---------------------------------------------------------------------------
+# These are needed ONLY if you want to trigger the monitor via @mentions.
+# See SLACK_BOT_SETUP.md for how to get these.
+slack_bot_token: "xoxb-your-bot-token-here"
+slack_app_token: "xapp-your-app-token-here"
+
+# ---------------------------------------------------------------------------
+# Polling & Timeouts
+# ---------------------------------------------------------------------------
+poll_interval_seconds: 30
+default_timeout_minutes: 20
+slow_device_timeout_minutes: 150
+
+slow_device_keywords:
+  - "road wired"
+  - "assettrack wired"
+  - "protect plus"
+
+auto_detect_max_pages: 10
+headless: true
